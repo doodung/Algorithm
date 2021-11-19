@@ -1,0 +1,12 @@
+def solution(d, budget):
+    answer = 0
+    d.sort()
+
+    for i in range(len(d)):
+        budget = budget - d[i]
+        if budget < 0:
+            break
+        else:
+            answer += 1
+
+    return answer
