@@ -1,10 +1,6 @@
-def solution(x):
-    arr = str(x)
-    temp = 0
+def solution(phone_number):
+    answer = ''
+    length = len(phone_number)
+    answer += ((length - 4) * '*') + phone_number[length - 4:length + 1]
 
-    for i in range(len(arr)):
-        temp += int(arr[i:i + 1])
-    if (x % temp == 0):
-        return True
-    else:
-        return False
+    return answer

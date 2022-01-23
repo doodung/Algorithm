@@ -1,6 +1,10 @@
 def solution(n):
-    answer = str(n)
-    a=[]
-    for i in range(len(answer)):
-        a+=[int(answer[len(answer)-i-1:len(answer)-i])]
-    return a
+    temp = str(n)
+    answer=[]
+    string=''
+    for i in temp:
+        answer+=[int(i)]
+    answer.sort(reverse=True)
+    for i in answer:
+        string+=str(i)
+    return int(string)

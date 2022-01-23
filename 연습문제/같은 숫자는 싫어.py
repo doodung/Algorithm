@@ -1,9 +1,9 @@
-def solution(s):
-    answer = ''
-    half = len(s) // 2
-    if (len(s) % 2 == 0):
-        answer = s[half - 1:half + 1]
-    else:
-        answer = s[half:half + 1]
-
+def solution(arr):
+    answer = []
+    j=0
+    answer.append(arr[0])
+    for i in range(0,len(arr)):
+        if(answer[j]!=arr[i]):
+            answer.append(arr[i])
+            j=j+1
     return answer

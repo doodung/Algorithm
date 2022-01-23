@@ -1,8 +1,11 @@
-def solution(seoul):
+def solution(n):
     answer = ''
-    index=0
-    for i in range(len(seoul)):
-        if (seoul[i]=="Kim") :
-            index=i
-    answer="김서방은 %d에 있다" %(index)
+    watermelon = '수박수박'
+
+    if (n == 1):
+        answer = '수'
+    else:
+        answer = watermelon * (n // 2)
+        answer = answer[:n]
+
     return answer

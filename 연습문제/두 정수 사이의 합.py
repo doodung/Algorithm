@@ -1,9 +1,8 @@
-def solution(arr, divisor):
-    answer = []
-    for i in range(0,len(arr)):
-        if arr[i]%divisor==0:
-            answer.append(arr[i])
-            answer.sort()
-    if len(answer)==0:
-        answer.append(-1)
-    return answer
+def solution(a, b):
+    answer = 0
+    if(a>b):
+        temp=a
+        a=b
+        b=temp
+
+    return sum(range(a,b+1))

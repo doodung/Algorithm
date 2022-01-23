@@ -1,8 +1,6 @@
 def solution(n):
-    answer = ''
     answer = str(n)
-    re = 0
-
-    for i in range(0, len(answer)):
-        re += int(answer[i:i + 1])
-    return re
+    a=[]
+    for i in range(len(answer)):
+        a+=[int(answer[len(answer)-i-1:len(answer)-i])]
+    return a

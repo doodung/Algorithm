@@ -1,16 +1,8 @@
-def solution(s):
+def solution(n):
     answer = ''
-    idx = 0
-    for i in s:
-        if (i != " "):
-            if (idx % 2 == 0):
-                answer += i.upper()
-            else:
-                answer += i.lower()
-            idx += 1
-        else:
-            answer += ' '
-            idx = 0
+    answer = str(n)
+    re = 0
 
-    print(answer)
-    return answer
+    for i in range(0, len(answer)):
+        re += int(answer[i:i + 1])
+    return re

@@ -1,9 +1,9 @@
-def solution(arr):
+def solution(arr, divisor):
     answer = []
-    j=0
-    answer.append(arr[0])
     for i in range(0,len(arr)):
-        if(answer[j]!=arr[i]):
+        if(arr[i]%divisor==0):
             answer.append(arr[i])
-            j=j+1
+            answer.sort()
+    if(len(answer)==0):
+        answer.append(-1)
     return answer

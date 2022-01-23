@@ -1,6 +1,10 @@
-def solution(arr):
-    answer = 0
+def solution(x):
+    arr = str(x)
+    temp = 0
+
     for i in range(len(arr)):
-        answer+=arr[i]
-    answer=answer/(i+1)
-    return answer
+        temp += int(arr[i:i + 1])
+    if (x % temp == 0):
+        return True
+    else:
+        return False

@@ -1,12 +1,7 @@
-def solution(N, stages):
-    fail = {}
-    people = len(stages)
-    for i in range(1,N+1):
-        if people != 0:
-            count = stages.count(i)
-            fail[i] = count/people
-            people -= count
-        else:
-            fail[i]=0
+a, b = map(int, input().strip().split(' '))
 
-    return sorted(fail,key=lambda x:fail[x], reverse=True)
+star='*'
+for i in range(int(b)) :
+    for j in range(int(a)):
+        print('*',end='')
+    print('')

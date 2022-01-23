@@ -1,6 +1,8 @@
-def solution(phone_number):
-    answer = ''
-    length = len(phone_number)
-    answer += ((length - 4) * '*') + phone_number[length - 4:length + 1]
+def solution(arr1, arr2):
+    answer = [[]]
+    answer = [[0 for j in range(len(arr1[i]))] for i in range(len(arr1))]
+    for i in range(len(arr1)):
+        for j in range(len(arr1[i])):
+            answer[i][j] = arr1[i][j] + arr2[i][j]
 
     return answer

@@ -1,14 +1,19 @@
-def solution(arr):
-    temp = arr
-    small = min(arr)
+def solution(num):
+    answer = 0
 
     while (1):
-        if small in temp:
-            temp.remove(small)
-        else:
+        if (answer == 500):
+            answer = -1
+            return answer
+        if (num == 1):
             break
+        if (num % 2 == 0):
+            num = num / 2
+            answer += 1
+            continue
+        elif (num % 2 == 1):
+            num = num * 3 + 1
+            answer += 1
+            continue
 
-    if len(temp) == 0:
-        temp.append(-1)
-
-    return temp
+    return answer

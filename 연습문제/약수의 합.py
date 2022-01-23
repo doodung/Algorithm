@@ -1,8 +1,6 @@
-def solution(s, n):
-    s = list(s)
-    for i in range(len(s)):
-        if s[i].isupper():
-            s[i]=chr((ord(s[i])-ord('A')+ n)%26+ord('A'))
-        elif s[i].islower():
-            s[i]=chr((ord(s[i])-ord('a')+ n)%26+ord('a'))
-    return "".join(s)
+def solution(n):
+    answer = 0
+    for i in range(1,n+1):
+        if(n%i==0):
+            answer+=i
+    return answer

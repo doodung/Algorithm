@@ -1,7 +1,9 @@
-import calendar
-def solution(a, b):
+def solution(s):
     answer = ''
-    date = {0:'MON', 1:'TUE', 2:'WED', 3:'THU', 4:'FRI', 5:'SAT', 6:'SUN'}
-    answer = date[calendar.weekday(2016,a,b)]
+    half = len(s) // 2
+    if (len(s) % 2 == 0):
+        answer = s[half - 1:half + 1]
+    else:
+        answer = s[half:half + 1]
 
     return answer
