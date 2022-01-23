@@ -1,36 +1,44 @@
-# 2178 미로탐색
+# 1260
+# DFS와 BFS
+
 from collections import deque
 
 
-def bfs(x, y):
-    # 상, 하, 좌, 우
-    dx = [-1, 1, 0, 0]
-    dy = [0, 0, -1, 1]
+def dfs(v):
+    visited[v] = True
+    print(v, end=' ')
 
-    queue = deque()
-    queue.append((x, y))
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(i)
+
+
+def bfs(v):
+    queue = deque([v])
+    visited[v] = True
 
     while queue:
-        x, y = queue.popleft()
-
-        for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
-
-            if nx < 0 or nx >= N or ny < 0 or ny >= M:
-                continue
-
-            if board[nx][ny] == 0:
-                continue
-
-            if board[nx][ny] == 1:
-                board[nx][ny] = board[x][y] + 1
-                queue.append((nx, ny))
-
-    return board[N - 1][M - 1]
+        q = queue.popleft()
+        print(q, end=' ')
+        for i in graph[q]:
+            if not visited[i]:
+                queue.append(i)
+                visited[i] = True
 
 
-N, M = map(int, input().split())
-board = [list(map(int, input())) for i in range(N)]
+N, M, V = map(int, input().split())
+graph = [[] for _ in range(N+1)]
+visited = [False] * (N+1)
 
-print(bfs(0, 0))
+for i in range(M):
+    a, b = map(int, input().split())
+    graph[a].append(b)
+    graph[b].append(a)
+
+for i in range(1, N+1):
+    graph[i].sort()
+
+dfs(V)
+visited = [False] * (N+1)
+print()
+bfs(V)
