@@ -1,14 +1,10 @@
-import sys
 from collections import deque
 
 # 12100 2048
 # 2022-03-19 doodung
 
-sys.stdin = open("input.txt.", "r")
 N = int(input())
 board = [list(map(int, input().split())) for i in range(N)]
-print(board)
-Max = -1
 answer, q = 0, deque()
 
 
