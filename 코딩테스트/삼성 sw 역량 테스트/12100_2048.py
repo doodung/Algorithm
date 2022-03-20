@@ -59,6 +59,7 @@ def move(k):
 
 def recursive(count):
     global board, answer
+    # 결과 : 최대 5번 이동 시켜서 얻을 수 있는 가장 큰 블록
     if count == 5:
         for i in range(N):
             answer = max(answer, max(board[i]))
