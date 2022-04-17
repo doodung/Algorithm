@@ -77,6 +77,7 @@ while 1:
     for x, y in blocks[0][2]:
         board[x][y] = -2
     count += blocks[0][0] ** 2
+
     gravity(board)
 
     # 90도 반시계 회전
