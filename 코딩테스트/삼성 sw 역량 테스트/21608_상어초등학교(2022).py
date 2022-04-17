@@ -12,6 +12,12 @@ for i in range(N * N):
     like = stu[1:]
     like_list.append(stu)
     temp = []
+
+    # 맨 처음 student는 무조건 가운데 위치.
+    if i == 0:
+        board[1][1] = stu[0]
+        continue
+
     for j in range(N):
         for k in range(N):
             sum_like, empty = 0, 0
@@ -29,7 +35,7 @@ for i in range(N * N):
     temp.sort(key=lambda x: (-x[0], -x[1], x[2]))
     board[temp[0][2][0]][temp[0][2][1]] = stu[0]
 
-like_list.sort(key=lambda x: x[0])
+like_list.sort()
 for i in range(N):
     for j in range(N):
         sat = 0
