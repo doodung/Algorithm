@@ -13,15 +13,11 @@ def update(x, y, board, rate):
         for j in range(5):
             if rate[i][j] == 0:
                 continue
-
             nx, ny = x - 2 + i, y - 2 + j
-
             if 0 <= nx < n and 0 <= ny < n:
                 board[nx][ny] += int(sand * rate[i][j])
                 inner += int(sand * rate[i][j])
-
             move += int(sand * rate[i][j])
-
     return [move, inner]
 
 
