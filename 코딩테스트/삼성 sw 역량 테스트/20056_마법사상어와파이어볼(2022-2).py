@@ -14,8 +14,8 @@ for _ in range(K):
     # 파이어볼 이동
     for m in range(len(fireball)):
         x, y, mi, si, di = fireball[m]
-        nx = (N +x+dx[di]*si)%N
-        ny = (N+y + dy[di] * si)%N
+        nx = (N + x + dx[di] * si) % N
+        ny = (N + y + dy[di] * si) % N
         board[nx][ny].append([mi, si, di])
         fireball[m][0] = nx
         fireball[m][1] = ny
@@ -41,10 +41,10 @@ for _ in range(K):
                     dir = [0, 2, 4, 6]
                 else:
                     dir = [1, 3, 5, 7]
-                if all_m//5:
+                if all_m // 5:
                     for d in dir:
                         new_fireball.append([i, j, all_m // 5, all_s // L, d])
-            if L==1:
+            if L == 1:
                 for mf, sf, df in board[i][j]:
                     new_fireball.append([i, j, mf, sf, df])
     fireball = new_fireball
