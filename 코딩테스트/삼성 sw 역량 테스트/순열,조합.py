@@ -61,3 +61,5 @@ def get_permutations2(n,depth,P):
 arr=[0,1,2,3,4]
 chosen = [False for _ in range(len(arr))]
 print("배열의 인덱스로 새로운 순열 만들기", get_permutations2(3,0,[]))
+
+
